@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/edit_web_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:contentDescription="@string/thumbnail_url"
+            android:src="@drawable/ic_folder"/>
+        <EditText
+            android:id = "@+id/edit_web_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/title_hint"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:inputType="textMultiLine|text"/>
+        <EditText
+            android:id = "@+id/edit_web_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/url_hint"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:inputType = "textMultiLine|textUri"/>
+    </LinearLayout>
+</ScrollView>
+

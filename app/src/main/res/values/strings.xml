@@ -1,0 +1,26 @@
+<resources>
+    <!--Name of app.-->
+    <string name="app_name">Linker</string>
+    <!--Inserts URL and metadata into the SQL database.-->
+    <string name="save_button">Save</string>
+    <!--Deletes SQL entry.-->
+    <string name="delete_button">Delete</string>
+    <!--Cancel's dialog.-->
+    <string name="cancel_button">Cancel</string>
+    <!--Update's dialog.-->
+    <string name="update_button">Update</string>
+    <!--Title of dialog.-->
+    <string name="dialog_title">Edit</string>
+    <!--Title hint for the edit dialog-->
+    <string name="title_hint">Title</string>
+    <!--URL hint for the edit dialog-->
+    <string name="url_hint">URL</string>
+    <!--Accessibility description of URL thumbnail.-->
+    <string name="thumbnail_url">URL Thumbnail</string>
+    <!--Title entry of list view.-->
+    <string name="list_view_title">Title</string>
+    <!--URL entry of list view.-->
+    <string name="url_list_view_title">URL</string>
+    <!--Accessibility description of the folder thumbnail.-->
+    <string name="thumbnail_folder">Folder Thumbnail</string>
+</resources>
