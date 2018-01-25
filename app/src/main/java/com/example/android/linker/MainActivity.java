@@ -27,7 +27,11 @@ public class MainActivity extends AppCompatActivity implements LinkFragment.Show
                     .add(R.id.root_fragment_layout, LinkFragment.newInstance(), "frag")
                     .commit();
         }
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
         Intent intent = getIntent();
         String action = intent.getAction();
         String type = intent.getType();

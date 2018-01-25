@@ -94,10 +94,17 @@ public class LinkInfoDialogFragment extends DialogFragment {
                         if (!emptyUrl.equals("")) { // If the URL dialog field is empty, don't do anything.
                             ContentValues values = new ContentValues();
                             int num = 0;
+
+                            //makes sure to add https when user inserts a URL starting with www.
+                            String urlFix = ((EditText) alertDialog.findViewById(R.id.edit_web_url)).getText().toString();
+                            if (!urlFix.startsWith("http://") && !urlFix.startsWith("https://")) {
+                                urlFix = "https://" + urlFix;
+                            }
+
                             // Insert the contents of the dialog field into the database.
                             values.put(LinkContract.LinkEntry.COLUMN_LINK_DATA_TYPE, num); // TO DO. Used when folders are added.
                             values.put(LinkContract.LinkEntry.COLUMN_LINK_TITLE, ((EditText) alertDialog.findViewById(R.id.edit_web_title)).getText().toString());
-                            values.put(LinkContract.LinkEntry.COLUMN_LINK_URL, ((EditText) alertDialog.findViewById(R.id.edit_web_url)).getText().toString());
+                            values.put(LinkContract.LinkEntry.COLUMN_LINK_URL, urlFix);
                             values.put(LinkContract.LinkEntry.COLUMN_LINK_IMAGE, getArguments().getByteArray("getByteArray"));
 
                             try {

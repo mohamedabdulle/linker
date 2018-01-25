@@ -261,7 +261,7 @@ public class LinkFragment extends Fragment {
             loaderBundle.putInt("getDialog", INSERT_DIALOG); // This is a dialog that will only enter data into the database.
             loaderBundle.putInt("getDisplayInfo", DISPLAY_INSERT_INFO); // Signals for a dialog populated with the parsed data.
 
-            /** Opens a dialog with the data in another thread. Temporary solution until I find a cleaner way to do this. */
+            /** Opens a dialog with the data in another thread. Temporary solution until I create an AsyncTask. */
             handler = new Handler() {
                 public void handleMessage(android.os.Message msg) {
                     try {

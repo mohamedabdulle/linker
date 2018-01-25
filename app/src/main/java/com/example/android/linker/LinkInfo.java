@@ -38,6 +38,9 @@ public class LinkInfo {
     /** Holds the converted bitmap. */
     private Bitmap myBitmap;
 
+    /** Used as a check to verify whether the data string had to be tokenized and a proper URL extracted. */
+    boolean hasURLBeenParsed = false;
+
     /**
      * Text is first parsed for a URL, then parsed for the URL title and thumbnail, then converted to a byte array.
      * @param data
@@ -63,6 +66,7 @@ public class LinkInfo {
 
             if (match.matches()) {
                 url = str;
+                hasURLBeenParsed = true;
             }
 
             if (!url.startsWith("http://") && !url.startsWith("https://")) {
@@ -84,9 +88,10 @@ public class LinkInfo {
          * If the URL equals passedData, than that means pattern matching failed in {@link LinkInfo#textParser(String)} and the constructor argument, data, holds no URL.
          * There is no need for HTML parsing at this point.
          */
-        if (url.equals(passedData)) {
+        if (hasURLBeenParsed) {
             try {
-                Document doc = Jsoup.connect(url).timeout(3000).get();
+
+                Document doc = Jsoup.connect(url).timeout(10000).get();
                 title = doc.title();
 
                 Element image = doc.select("meta[property=og:image]").first(); //Uses Open Graph Protocol.
